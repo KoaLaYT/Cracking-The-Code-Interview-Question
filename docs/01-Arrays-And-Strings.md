@@ -26,3 +26,24 @@
 
 -   Be careful to the 'off by one' error!
 -   Do early return if there is no spaces in the string!
+
+### 4. Palindrome Permutation
+
+> Given a string, write a function to check if it is a permutation of a palindrome. A palindrome is a word or phase that is the same forwards and backwards.
+
+🔨 Failed to consider:
+
+-   Using an `int` as a bit vector truly beyond my imagination, especially the method used to find if the bit vector only has one bit set. (But I think we can just use XOR to toggle the bit, which make this method more consice!)
+
+```c++
+bit_vec ^= (1 << c); // XOR
+// -------
+// Compare to the implementation in the book
+// -------
+int mask = 1 << c;
+if ((bitVector & mask)
+    bitVector |= mask;  // OR when 0
+} else {
+    bitVector &= ~mask; // AND when 1, and flip the mask
+}
+```
