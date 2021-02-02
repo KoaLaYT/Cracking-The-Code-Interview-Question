@@ -47,3 +47,11 @@ if ((bitVector & mask)
     bitVector &= ~mask; // AND when 1, and flip the mask
 }
 ```
+
+### 5. One Away
+
+> There are three types of edits that can be performed on strings: insert a character, remove a character, or replace a character. Given two strings, write a function to check if they are one edit(or zero edits) away.
+
+📝 Reminder:
+
+-   If the inputs are raw `C` strings, we shouldn't use `strlen` to get their lengths, for one string maybe be extremely long, and we just want to know if their lengths' difference is larger than 2!
