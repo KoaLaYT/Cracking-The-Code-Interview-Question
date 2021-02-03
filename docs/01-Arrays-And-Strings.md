@@ -55,3 +55,11 @@ if ((bitVector & mask)
 📝 Reminder:
 
 -   If the inputs are raw `C` strings, we shouldn't use `strlen` to get their lengths, for one string maybe be extremely long, and we just want to know if their lengths' difference is larger than 2!
+
+### 6. String Compression
+
+> Implement a method to perform basic string compression using the counts of repeated characters. For example, the string `aabcccccaaa` would become `a2blc5a3`. If the "compressed" string would not become smaller than the origin string, your method should return the origin string.
+
+🔨 Failed to consider:
+
+-   Not thinking calculate the compressed length first. It can make the string has exact size it needs, maybe more suitable for its compression purpose.
