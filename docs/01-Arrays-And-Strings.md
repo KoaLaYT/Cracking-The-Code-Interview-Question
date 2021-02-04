@@ -63,3 +63,14 @@ if ((bitVector & mask)
 🔨 Failed to consider:
 
 -   Not thinking calculate the compressed length first. It can make the string has exact size it needs, maybe more suitable for its compression purpose.
+
+### 7. Rotate Matrix
+
+> Given an image represented by an NxN matrix, where each pixel in the image is 4 bytes, write a method to rotate the image by 90 degree.
+
+📝 Reminder:
+
+-   The index calculation is really tricky! Asumming a matrix of size `N` and clockwise rotation, `(i, j)` becomes `(j, N - i - 1)`. So for a total rotation, we need three swaps:
+    -   top left -> top right: `(i, j)` -> `(j, N - i - 1)`
+    -   top left -> bottom right: `(i, j)` -> `(N - i - 1, N - j - 1)`
+    -   top left -> bottom left: `(i, j)` -> `(N - j - 1, i)`
