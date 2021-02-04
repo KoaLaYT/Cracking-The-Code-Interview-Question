@@ -74,3 +74,11 @@ if ((bitVector & mask)
     -   top left -> top right: `(i, j)` -> `(j, N - i - 1)`
     -   top left -> bottom right: `(i, j)` -> `(N - i - 1, N - j - 1)`
     -   top left -> bottom left: `(i, j)` -> `(N - j - 1, i)`
+
+### 8. Zero Matrix
+
+> Write an algorithm such that if an element in an M x N matrix is 0, its entire row and column are set to 0.
+
+🔨 Failed to consider:
+
+-   Using first row and first column to record zero infos. It can reduce space from O(N) to O(1)!
