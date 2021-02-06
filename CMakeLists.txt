@@ -12,3 +12,4 @@ set(CMAKE_CXX_STANDARD 17)
 find_package(GTest CONFIG REQUIRED)
 
 add_subdirectory("01-Arrays-And-Strings")
+add_subdirectory("02-Linked-Lists")
