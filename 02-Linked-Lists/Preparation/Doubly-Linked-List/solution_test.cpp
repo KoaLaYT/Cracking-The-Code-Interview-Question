@@ -37,7 +37,11 @@ TEST_F(ListTest, basic)
 
 TEST_F(ListTest, remove_head)
 {
-    list.remove(3);
+    Node* it = list.remove(3);
+    EXPECT_EQ(it->key, 3);
+    EXPECT_EQ(it->prev, nullptr);
+    EXPECT_EQ(it->next, nullptr);
+    delete it;
 
     EXPECT_EQ(list.head->key, 2);
     EXPECT_EQ(list.head->next->key, 1);
@@ -50,7 +54,11 @@ TEST_F(ListTest, remove_head)
 
 TEST_F(ListTest, remove_tail)
 {
-    list.remove(1);
+    Node* it = list.remove(1);
+    EXPECT_EQ(it->key, 1);
+    EXPECT_EQ(it->prev, nullptr);
+    EXPECT_EQ(it->next, nullptr);
+    delete it;
 
     EXPECT_EQ(list.head->key, 3);
     EXPECT_EQ(list.head->next->key, 2);
@@ -63,7 +71,11 @@ TEST_F(ListTest, remove_tail)
 
 TEST_F(ListTest, remove_middle)
 {
-    list.remove(2);
+    Node* it = list.remove(2);
+    EXPECT_EQ(it->key, 2);
+    EXPECT_EQ(it->prev, nullptr);
+    EXPECT_EQ(it->next, nullptr);
+    delete it;
 
     EXPECT_EQ(list.head->key, 3);
     EXPECT_EQ(list.head->next->key, 1);
