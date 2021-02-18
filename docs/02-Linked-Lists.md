@@ -57,3 +57,12 @@
 🔨 Failed to consider:
 
 -   Not consider two lists with different lengths!
+
+### 6. Palindrome
+
+> Implement a function to check if a linked list is a palindrome.
+
+🔨 Failed to consider:
+
+-   Using a stack to store first half values, and then do comparing.
+-   Recursivly comparing is a little bit complicate, and not very clear compare to other two methods.
