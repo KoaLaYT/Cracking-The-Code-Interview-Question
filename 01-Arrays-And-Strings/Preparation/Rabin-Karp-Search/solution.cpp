@@ -2,7 +2,6 @@
 
 #include <cassert>
 #include <cmath>
-#include <cstdio>
 
 constexpr int BASE = 256;
 constexpr int PRIME = 101;

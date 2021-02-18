@@ -9,7 +9,6 @@
 
 #include <gtest/gtest.h>
 
-#include <cstdio>
 #include <vector>
 
 TEST(Delete_Middle_Node, basic)

@@ -8,7 +8,6 @@
 #include "solution.hpp"
 
 #include <cassert>
-#include <cstdio>
 
 /**
  * ASSUME:

@@ -2,7 +2,6 @@
 
 #include <gtest/gtest.h>
 
-#include <cstdio>
 #include <vector>
 
 TEST(Rotate_Matrix, basic)
