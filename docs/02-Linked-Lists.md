@@ -66,3 +66,11 @@
 
 -   Using a stack to store first half values, and then do comparing.
 -   Recursivly comparing is a little bit complicate, and not very clear compare to other two methods.
+
+### 7. Intersection
+
+> Given two (singly) linked lists, determine if the two lists intersect, return the intersecting node. Note the intersection is defined based on reference, not value. That is, if the `kth` node of the first list is the exact node (by reference) as the `jth` node of the second list, then they are intersecting.
+
+🔨 Failed to consider:
+
+-   Check the tail as a quick return, and then do another iteration to find the intersection. Reduce the space to `O(1)`.
