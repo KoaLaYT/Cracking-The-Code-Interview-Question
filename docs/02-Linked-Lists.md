@@ -91,5 +91,4 @@
 
 🔨 Failed to consider:
 
--   Using two pointers can make the implementation simple, but needs a little bit insight about the collision point: assume the loop begin point is `kth` from list beginning, then the collision point will always be `kth` from the loop begin point, as the diagram shows below.
-    <img src="https://i.imgur.com/zu4kXSD.png" alt="loop detection diagram" style="display: block; width: 320px" />
+-   Using two pointers can make the implementation simple, but needs a little bit insight about the collision point: assume the loop begin point is `kth` from list beginning, then the collision point will always be `kth` from the loop begin point, as the diagram shows below.![loop detection diagram](https://i.imgur.com/zu4kXSD.png)
