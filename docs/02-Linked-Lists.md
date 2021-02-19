@@ -74,3 +74,21 @@
 🔨 Failed to consider:
 
 -   Check the tail as a quick return, and then do another iteration to find the intersection. Reduce the space to `O(1)`.
+
+### 8. Loop Detection
+
+> Given a circular linked list, implement an algorithm that return the nodes at the beginning of the loop.
+>
+> DEFINITION:
+>
+> Circular linked list: A (corrupt) linked list in which a node's next pointer points to an earlier node, so as to make a loop in the list.
+>
+> EXAMPLE:
+>
+> Input: A -> B -> C -> D -> E -> F -> C
+>
+> Output: C
+
+🔨 Failed to consider:
+
+-   Using two pointers can make the implementation simple, but needs a little bit insight about the collision point: assume the loop begin point is `kth` from list beginning, then the collision point will always be `kth` from the loop begin point, as the diagram shows below.![loop detection diagram](./images/0208-Loop-Detection.png)
