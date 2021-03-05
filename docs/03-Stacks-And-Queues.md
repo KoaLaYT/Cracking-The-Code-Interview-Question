@@ -35,3 +35,11 @@
 🔨 Failed to consider:
 
 -   No need to shift two stacks back and forth between inqueue and dequeue. Thinking a queue is divided into two halfs, one has oldest on top, and the other has newest on top. We only shift when the oldest stack is empty!
+
+### 5. Sort Stack
+
+> Write a program to sort a stack such that the smallest items are on the top. You can use an additional temporary stack, but you may not copy the elements into any other data structure (such as an array). The stack supports the following operations: `push`, `pop`, `peek` and `isEmpty`.
+
+📝 Reminder:
+
+-   Be careful about the order! We need smallest items on top, means the temporary stack has biggest items on top.
