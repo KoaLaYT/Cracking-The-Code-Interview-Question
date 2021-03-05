@@ -27,3 +27,11 @@
 📝 Reminder:
 
 -   Not tough one, but the `popAt` strategy should be well defined.
+
+### 4. Queue via Stack
+
+> Implement a MyQueue class which implements a queue with two stacks.
+
+🔨 Failed to consider:
+
+-   No need to shift two stacks back and forth between inqueue and dequeue. Thinking a queue is divided into two halfs, one has oldest on top, and the other has newest on top. We only shift when the oldest stack is empty!
