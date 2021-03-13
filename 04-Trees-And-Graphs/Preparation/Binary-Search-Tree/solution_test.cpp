@@ -59,6 +59,11 @@ protected:
     Tree tree;
 };
 
+TEST_F(TreeTest, height)
+{
+    EXPECT_EQ(tree.height(), 5);
+}
+
 TEST_F(TreeTest, search)
 {
     Node* found = tree.search(15);

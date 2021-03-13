@@ -20,8 +20,11 @@ struct Node {
 
 class Tree {
 public:
+    ~Tree() { free(m_root); }
+
     void set_root(Node* root) { m_root = root; }
 
+    int height() { return height(m_root); }
     Node* search(int key) { return search(m_root, key); }
     Node* minimum() { return minimum(m_root); }
     Node* maximum() { return maximum(m_root); }
@@ -37,6 +40,8 @@ private:
     Node* minimum(Node* node);
     Node* maximum(Node* node);
     void transplant(Node* a, Node* b);
+    int height(Node* node);
+    void free(Node* node);
 };
 
 #endif

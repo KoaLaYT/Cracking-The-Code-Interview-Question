@@ -1,5 +1,30 @@
 #include "solution.hpp"
 
+#include <queue>
+
+/**
+ * Get the height of the subtree
+ */
+int Tree::height(Node* node)
+{
+    if (!node) return 0;
+
+    std::queue<Node*> q;
+    int h = 0;
+    q.push(node);
+    while (!q.empty()) {
+        ++h;
+        int len = q.size();
+        for (int i = 0; i < len; ++i) {
+            auto first = q.front();
+            if (first->left) q.push(first->left);
+            if (first->right) q.push(first->right);
+            q.pop();
+        }
+    }
+    return h;
+}
+
 /**
  * Search from the given node,
  * return a pointer to a node with key if one exists,
@@ -148,4 +173,15 @@ void Tree::transplant(Node* a, Node* b)
     if (b) {
         b->p = a->p;
     }
+}
+
+/**
+ * Recursivly free the nodes of the subtree
+ */
+void Tree::free(Node* node)
+{
+    if (!node) return;
+    free(node->left);
+    free(node->right);
+    delete node;
 }
