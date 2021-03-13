@@ -4,7 +4,8 @@
 #include <random>
 #include <vector>
 
-#include "solution.hpp"
+#include "Binary-Search-Tree/solution.hpp"
+#include "Red-Black-Tree/solution.hpp"
 
 class RandomVector {
 public:
@@ -44,15 +45,23 @@ int main(int argc, char* argv[])
     while (--size_loop > 0) {
         size *= 10;
         RandomVector rv{size};
-        int total = 0;
+        int total_bst = 0;
+        int total_rbt = 0;
         for (int i = 0; i < CAL_LOOP; ++i) {
             rv.shuffle();
-            Tree t;
+            BinarySearchTree::Tree bst;
+            RedBlackTree::Tree rbt;
+
             for (auto e : rv.data()) {
-                t.insert(e);
+                bst.insert(e);
+                rbt.insert(e);
             }
-            total += t.height();
+
+            total_bst += bst.height();
+            total_rbt += rbt.height();
         }
-        std::printf("For size = %10d, average tree height = %.2f\n", size, (double)total / CAL_LOOP);
+        std::printf("For size = %10d, average bst height = %.2f\n", size, (double)total_bst / CAL_LOOP);
+        std::printf("For size = %10d, average rbt height = %.2f\n", size, (double)total_rbt / CAL_LOOP);
+        std::printf("\n");
     }
 }

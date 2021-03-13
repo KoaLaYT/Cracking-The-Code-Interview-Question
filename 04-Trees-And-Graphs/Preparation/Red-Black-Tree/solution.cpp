@@ -2,6 +2,8 @@
 
 #include <queue>
 
+namespace RedBlackTree {
+
 /**
  * Define a nil node for simplifying code
  */
@@ -182,4 +184,6 @@ void Tree::insert_fixup(Node* node)
         }
     }
     m_root->set_black();
+}
+
 }

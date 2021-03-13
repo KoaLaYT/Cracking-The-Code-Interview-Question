@@ -2,6 +2,7 @@
 
 #include <queue>
 
+namespace BinarySearchTree {
 /**
  * Get the height of the subtree
  */
@@ -184,4 +185,6 @@ void Tree::free(Node* node)
     free(node->left);
     free(node->right);
     delete node;
+}
+
 }

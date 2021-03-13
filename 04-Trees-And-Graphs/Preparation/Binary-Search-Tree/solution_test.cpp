@@ -2,6 +2,8 @@
 
 #include <gtest/gtest.h>
 
+using namespace BinarySearchTree;
+
 class TreeTest : public ::testing::Test {
 protected:
     void SetUp() override

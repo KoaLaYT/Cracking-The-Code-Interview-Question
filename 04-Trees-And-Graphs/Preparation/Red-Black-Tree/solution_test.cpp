@@ -5,6 +5,8 @@
 #include <queue>
 #include <vector>
 
+using namespace RedBlackTree;
+
 class TreeTest : public ::testing::Test {
 protected:
     void SetUp() override

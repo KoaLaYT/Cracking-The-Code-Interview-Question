@@ -1,6 +1,7 @@
 #ifndef BINARY_SEARCH_TREE_20200312
 #define BINARY_SEARCH_TREE_20200312
 
+namespace BinarySearchTree {
 /**
  * For Simplicity, raw pointer is used and not using template
  */
@@ -43,5 +44,6 @@ private:
     int height(Node* node);
     void free(Node* node);
 };
+}  // namespace BinarySearchTree
 
 #endif

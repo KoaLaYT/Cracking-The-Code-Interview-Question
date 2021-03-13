@@ -1,6 +1,7 @@
 #ifndef RED_BLACK_TREE_20200313
 #define RED_BLACK_TREE_20200313
 
+namespace RedBlackTree {
 struct Node {
     enum class Color {
         Black,
@@ -52,5 +53,6 @@ private:
     void right_rotate(Node* node);
     void insert_fixup(Node* node);
 };
+}  // namespace RedBlackTree
 
 #endif
