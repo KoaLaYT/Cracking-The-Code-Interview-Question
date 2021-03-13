@@ -26,6 +26,9 @@ struct Node {
     bool is_black() { return color == Color::Black; }
     bool is_leaf() { return left->is_nil() && right->is_nil(); }
 
+    void set_red() { color = Color::Red; }
+    void set_black() { color = Color::Black; }
+
     static Node* nil;
 };
 
@@ -45,6 +48,9 @@ private:
 
     int height(Node* node);
     void free(Node* node);
+    void left_rotate(Node* node);
+    void right_rotate(Node* node);
+    void insert_fixup(Node* node);
 };
 
 #endif

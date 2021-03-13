@@ -3,6 +3,7 @@
 #include <gtest/gtest.h>
 
 #include <queue>
+#include <vector>
 
 class TreeTest : public ::testing::Test {
 protected:
@@ -78,8 +79,8 @@ private:
     Node* root() { return m_tree.get_root(); }
 
     bool red_children_all_black(Node* node);
-    bool equal_black(Node* node);
     bool equal_black_recursive(Node* node);
+    void equal_black(Node* node, int bh, std::vector<int>& bhs);
 };
 
 /**
@@ -108,38 +109,30 @@ bool RBPropertyChecker::equal_black_recursive(Node* node)
 {
     if (node->is_nil()) return true;
 
-    return equal_black(node) &&
-           equal_black_recursive(node->left) &&
+    std::vector<int> bhs;
+    equal_black(node, 0, bhs);
+    for (int i = 1; i < bhs.size(); ++i) {
+        if (bhs[i - 1] != bhs[i]) return false;
+    }
+
+    return equal_black_recursive(node->left) &&
            equal_black_recursive(node->right);
 }
 
 /**
  * Check if single node meet property 5
  */
-bool RBPropertyChecker::equal_black(Node* node)
+void RBPropertyChecker::equal_black(Node* node, int bh, std::vector<int>& bhs)
 {
-    if (node->is_nil()) return true;
-
-    std::queue<Node*> q;
-    q.push(node);
-    bool encounter_leaf = false;
-    while (!q.empty()) {
-        int len = q.size();
-        bool has_leaf = false;
-        for (int i = 0; i < len; ++i) {
-            auto first = q.front();
-
-            if (encounter_leaf && first->is_black()) return false;
-
-            if (first->is_leaf()) has_leaf = true;
-
-            if (!first->left->is_nil()) q.push(first->left);
-            if (!first->right->is_nil()) q.push(first->right);
-            q.pop();
-        }
-        if (!encounter_leaf) encounter_leaf = has_leaf;
+    if (node->is_nil()) {
+        bhs.push_back(bh);
+        return;
     }
-    return true;
+    if (node->is_black()) {
+        ++bh;
+    }
+    equal_black(node->left, bh, bhs);
+    equal_black(node->right, bh, bhs);
 }
 
 TEST_F(TreeTest, checker)
@@ -170,7 +163,13 @@ TEST_F(TreeTest, search)
 TEST_F(TreeTest, insert)
 {
     RBPropertyChecker checker{tree};
-    tree.insert(4);
-    ASSERT_FALSE(tree.search(4)->is_nil());
-    EXPECT_TRUE(checker.property_maintained());
+    int inserts[] = {4, 13, 12, 16, 17, 18, 3, 9, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29};
+    for (auto key : inserts) {
+        tree.insert(key);
+        ASSERT_FALSE(tree.search(key)->is_nil());
+        EXPECT_TRUE(checker.property_maintained()) << "Insert key: " << key << " failed";
+        EXPECT_TRUE(checker.root_black());
+        EXPECT_TRUE(checker.red_children_all_black());
+        EXPECT_TRUE(checker.equal_black());
+    }
 }
