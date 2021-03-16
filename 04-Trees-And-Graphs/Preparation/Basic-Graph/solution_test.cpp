@@ -9,3 +9,51 @@ TEST(Basic_Graph, graph_construct)
 {
     Graph g{PATH("graph.txt")};
 }
+
+TEST(Basic_Graph, bfs)
+{
+    Graph g{PATH("graph.txt")};
+
+    struct Case {
+        char source;
+        std::map<char, int> expect;
+    };
+
+    std::vector<Case> cases{
+        {
+            's',
+            {
+                {'r', 1},
+                {'s', 0},
+                {'v', 2},
+                {'x', 2},
+                {'w', 1},
+                {'t', 2},
+                {'u', 3},
+                {'y', 3},
+            },
+        },
+        {
+            't',
+            {
+                {'r', 3},
+                {'s', 2},
+                {'v', 4},
+                {'x', 1},
+                {'w', 1},
+                {'t', 0},
+                {'u', 1},
+                {'y', 2},
+            },
+        }};
+
+    for (auto& c : cases) {
+        auto result = g.bfs(c.source);
+        ASSERT_EQ(result.size(), 8);
+
+        for (auto& pair : result) {
+            EXPECT_EQ(pair.second.c, Graph::BFSInfo::Color::Black);
+            EXPECT_EQ(pair.second.d, c.expect[pair.first->name]);
+        }
+    }
+}
