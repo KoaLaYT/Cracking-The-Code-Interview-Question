@@ -75,6 +75,7 @@ TEST(Basic_Graph, dfs)
 
         for (auto& pair : result) {
             EXPECT_EQ(pair.second.c, Graph::Color::Black);
+            EXPECT_TRUE(pair.second.d < pair.second.f);
             Vertex* p = pair.second.p;
             if (p) {
                 EXPECT_EQ(pair.second.d, result[p].d + 1);
