@@ -54,7 +54,7 @@ std::map<Vertex*, Graph::BFSInfo> Graph::bfs(char name)
     // Init result
     std::map<Vertex*, Graph::BFSInfo> result;
     for (auto& pair : m_adj) {
-        result[pair.first] = Graph::BFSInfo{nullptr, Graph::BFSInfo::Color::White, -1};
+        result[pair.first] = Graph::BFSInfo{nullptr, Graph::Color::White, -1};
     }
 
     result[v].set_gray();
@@ -80,4 +80,44 @@ std::map<Vertex*, Graph::BFSInfo> Graph::bfs(char name)
     }
 
     return result;
+}
+
+std::map<Vertex*, Graph::DFSInfo> Graph::dfs()
+{
+    std::map<Vertex*, Graph::DFSInfo> result;
+    for (auto& pair : m_adj) {
+        result[pair.first] = Graph::DFSInfo{
+            nullptr,
+            Graph::Color::White,
+            -1,
+            -1,
+        };
+    }
+
+    int timestamp = 0;
+    for (auto& pair : result) {
+        if (pair.second.is_white()) {
+            timestamp = dfs_visit(result, pair.first, timestamp);
+        }
+    }
+
+    return result;
+}
+
+int Graph::dfs_visit(std::map<Vertex*, DFSInfo>& result, Vertex* v, int time)
+{
+    result[v].d = time++;
+    result[v].set_gray();
+
+    for (Vertex* s : m_adj[v]) {
+        if (result[s].is_white()) {
+            result[s].p = v;
+            time = dfs_visit(result, s, time);
+        }
+    }
+
+    result[v].f = time++;
+    result[v].set_black();
+
+    return time;
 }
