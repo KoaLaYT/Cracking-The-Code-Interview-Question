@@ -1,0 +1,10 @@
+v: w;
+s: v;
+w: s;
+q: s, w, t;
+t: x, y;
+x: z;
+z: x;
+y: q;
+r: y, u;
+u: y;
