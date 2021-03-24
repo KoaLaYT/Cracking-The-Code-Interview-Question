@@ -15,3 +15,11 @@
 📝 Reminder:
 
 -   A typicial recursive algorithm for tree.
+
+### 3. List of Depths
+
+> Given a binary tree, design an algorithm which creates a linked list of all the nodes at each depth.
+
+📝 Reminder:
+
+-   BFS and DFS both work.
