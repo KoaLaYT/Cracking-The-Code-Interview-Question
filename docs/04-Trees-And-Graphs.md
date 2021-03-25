@@ -23,3 +23,11 @@
 📝 Reminder:
 
 -   BFS and DFS both work.
+
+### 4. Check Balanced
+
+> Implement a function to check if a binary tree is balanced. For the purpose of this question, a balanced tree is defined to be a tree such that the heights of the two subtrees of any node never diff by more than one.
+
+📝 Reminder:
+
+-   Compare left and right subtree's height while recursion is enough, no need to store all the leaves' height and then do diff calculations.
