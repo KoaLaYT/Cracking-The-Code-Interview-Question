@@ -31,3 +31,11 @@
 📝 Reminder:
 
 -   Compare left and right subtree's height while recursion is enough, no need to store all the leaves' height and then do diff calculations.
+
+### 5. Validate BST
+
+> Implement a function to check if a binary tree is a binary search tree.
+
+📝 Reminder:
+
+-   A typicial recursive algorithm for tree.
