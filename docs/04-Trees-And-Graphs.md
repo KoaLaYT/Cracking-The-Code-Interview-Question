@@ -39,3 +39,13 @@
 📝 Reminder:
 
 -   A typicial recursive algorithm for tree.
+
+### 6. Successor
+
+> Write an algorithm to find the 'next' node (i.e., in-order successor) of a given node in a binary search tree. You may assume that each node has a link to its parent.
+
+📝 Reminder:
+
+-   Remember to classify into two situations:
+    1. The node has a right child: the successor is the leftmost node of the right child.
+    2. The node has not a right child: recursively finding its parent, when the parent is its parent's left child.
