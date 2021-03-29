@@ -49,3 +49,27 @@
 -   Remember to classify into two situations:
     1. The node has a right child: the successor is the leftmost node of the right child.
     2. The node has not a right child: recursively finding its parent, when the parent is its parent's left child.
+
+### 7. Build Order
+
+> You are given a list of projects and a list of dependencies (which is a list of pairs of projects, where the second project is dependent on the first project). All of a project's dependencies must be built before the project is. Find a build order that will allow the project to be built. If there is no valid build order, return an error.
+>
+> EXAMPLE
+>
+> input:
+>
+> ```
+>       projects: a, b, c, d, e, f
+>
+>       dependencies: (a, d), (f, b), (b, d), (f, a), (d, c)
+> ```
+>
+> output:
+>
+> ```
+>       f, e, a, b, d, c
+> ```
+
+📝 Reminder:
+
+-   Topological Sort by using DFS.
