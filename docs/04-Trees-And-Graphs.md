@@ -81,3 +81,11 @@
 📝 Reminder:
 
 -   Make sure whether the nodes has pointer to its parent.
+
+### 9. BST Sequences
+
+> A binary search tree was created by traversing through an array from left to right and inserting each element. Given a binary search tree with distinct elements, print all possible arrays that could have led to this tree.
+
+🔨 Failed to consider:
+
+-   Didn't quite understand the question before seeing the solution. For the solution, two related recursive functions are used and they are not that hard to reason about.
