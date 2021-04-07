@@ -107,3 +107,11 @@
 🔨 Failed to consider:
 
 -   This problem can be implemented as `getNthNode`, which `n` is random generated.
+
+### 12. Paths with Sum
+
+> You are given a binary tree in which each node contains an integer value (which might positive or negative). Design an algorithm to count the number of paths that sum to a given value. The path does not need to start or end at the root or a leaf, but it must go downwards (traveling only from parent nodes to child nodes).
+
+🔨 Failed to consider:
+
+-   Using a map to record previous sums can avoid repeated calculations that reducing the time complexity from `O(NlogN)` to `O(N)`.
